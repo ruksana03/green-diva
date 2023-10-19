@@ -60,6 +60,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <Link to='/shoppingCart'><button>Cart</button></Link>
                     {
                         user?.email? <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

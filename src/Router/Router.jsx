@@ -8,6 +8,7 @@ import UpdateProduct from "../Pages/UpdateProduct";
 import Login from "../Components/JoinusComponents/Login";
 import Register from "../Components/JoinusComponents/Register";
 import JoinUs from "../Pages/JoinUs";
+import ShoppingCart from "../Pages/ShoppingCart";
 
 
 const Router = createBrowserRouter([
@@ -36,7 +37,8 @@ const Router = createBrowserRouter([
             },
             {
                 path:'/joinUs',
-                element: <JoinUs></JoinUs>
+                element: <JoinUs></JoinUs>,
+              
             },
             {
                 path: '/Login',
@@ -45,6 +47,11 @@ const Router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/shoppingCart',
+                element: <ShoppingCart></ShoppingCart>,
+                loader:() => fetch('http://localhost:5000/cartProducts')
             }
         ]
     }

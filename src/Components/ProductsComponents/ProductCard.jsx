@@ -1,15 +1,24 @@
 
-import { BsEye } from "react-icons/bs";
-import { MdOutlineDelete, MdModeEdit } from "react-icons/md";
+import { useState } from "react";
+import { BsEye, BsCartPlus } from "react-icons/bs";
+import { MdOutlineDelete, MdModeEdit, MdAdd } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const ProductCard = ({ product, updatedProducts, setUpdatedProducts }) => {
-    console.log(product);
+// const ProductCard = ({ product, updatedProducts, setUpdatedProducts, cartProducts, setCartProducts,handleCartProduct }) => {
+const ProductCard = ({ product, updatedProducts, setUpdatedProducts}) => {
+    // console.log(product);
+
+   
+    const [cartSuccessMassage, setCartSuccessMassage] = useState(false)
+    
+ 
+
+
     const { _id, img, name, brand, price, rating } = product;
 
     const handleDelete = (_id) => {
-        console.log(_id);
+        // console.log(_id);
 
         Swal.fire({
             title: 'Are you sure?',
@@ -37,12 +46,39 @@ const ProductCard = ({ product, updatedProducts, setUpdatedProducts }) => {
                             const filteredProducts = updatedProducts.filter((item) => item._id !== _id);
                             setUpdatedProducts(filteredProducts);
                         }
-                      
+
                     });
             }
         })
 
     };
+
+    const addCartProduct = (_id) => {
+        console.log(_id)
+        fetch("http://localhost:5000/products/addToCart", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(product), 
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.insertedId) {
+                    setCartSuccessMassage(true)
+                    Swal.fire({
+                        title: "Added!",
+                        text: "Your product has been added.",
+                        icon: "success",
+                    });
+                }
+            });
+    };
+    
+
+    
+
 
     return (
         <div>
@@ -53,7 +89,17 @@ const ProductCard = ({ product, updatedProducts, setUpdatedProducts }) => {
                 <p>{price} BDT</p>
                 <p className="my-2">Rating:{rating}/5</p>
             </div>
+
             <div className="mx-auto flex justify-center gap-4">
+                {
+                    cartSuccessMassage ? (
+                        <button className="bg-[#B0C591] text-xl px-4 py-1 rounded-2xl text-white">
+                            <BsCartPlus></BsCartPlus>
+                        </button>
+                    )  : (<button onClick={()=>addCartProduct(_id)} className="bg-[#B0C591] text-xl px-4 py-1 rounded-2xl text-white">
+                            <MdAdd></MdAdd>
+                        </button>)}
+
                 <button className="bg-[#B0C591] text-xl px-4 py-1 rounded-2xl text-white">
                     <BsEye></BsEye>
                 </button>
