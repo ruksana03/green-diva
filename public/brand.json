@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "brandName": "L'Oréal Paris",
+        "image": "https://i.ibb.co/Tt2L3fX/brand2.png"
+    },
+    {
+        "id": 2,
+        "brandName": "Dior",
+        "image": "https://i.ibb.co/v47RbX8/brand3.png"
+    },
+    {
+        "id": 3,
+        "brandName": "Estelle",
+        "image": "https://i.ibb.co/9wT2L0Z/brand4.png"
+    },
+    {
+        "id": 4,
+        "brandName": "Marie Earle",
+        "image": "https://i.ibb.co/wyf6YML/brand5.png"
+    },
+    {
+        "id": 5,
+        "brandName": "Face",
+        "image": "https://i.ibb.co/18nG5hP/brand6.png"
+    },
+    {
+        "id": 6,
+        "brandName": "Arabesque",
+        "image": "https://i.ibb.co/vP1Lryt/brand7.png"
+    },
+    {
+        "id": 7,
+        "brandName": "Maybelline New York",
+        "image": "https://i.ibb.co/vD2Lm4T/brand8.png"
+    },
+    {
+        "id": 8,
+        "brandName": "Face",
+        "image": "https://i.ibb.co/18nG5hP/brand6.png"
+    },
+    {
+        "id": 9,
+        "brandName": "Asili Botanics",
+        "image": "https://i.ibb.co/qYv1194/brand10.png"
+    },
+    {
+        "id": 10,
+        "brandName": "Vogue",
+        "image": "https://i.ibb.co/SwfSFDT/brand9.png"
+    }
+]

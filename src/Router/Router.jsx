@@ -9,6 +9,12 @@ import Login from "../Components/JoinusComponents/Login";
 import Register from "../Components/JoinusComponents/Register";
 import JoinUs from "../Pages/JoinUs";
 import ShoppingCart from "../Pages/ShoppingCart";
+import PricingPlans from "../Pages/PricingPlans";
+import AboutUs from "../Pages/AboutUs";
+import Contact from "../Pages/Contact";
+import BrandDetails from "../Pages/BrandDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ProductDetails from "../Pages/ProductDetails";
 
 
 const Router = createBrowserRouter([
@@ -28,12 +34,17 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/addProduct',
-                element: <AddProduct></AddProduct>
+                element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
             {
                 path: '/updateProduct/:id',
-                element: <UpdateProduct></UpdateProduct>,
+                element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+            },
+            {
+                path: '/brandDetails/:id',
+                element: <PrivateRoute><BrandDetails></BrandDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.id}`)
             },
             {
                 path:'/joinUs',
@@ -52,6 +63,23 @@ const Router = createBrowserRouter([
                 path: '/shoppingCart',
                 element: <ShoppingCart></ShoppingCart>,
                 loader:() => fetch('http://localhost:5000/cartProducts')
+            },
+            {
+                path: '/pricingPlans',
+                element: <PricingPlans></PricingPlans>
+            },
+            {
+                path: '/aboutUs',
+                element: <AboutUs></AboutUs>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
+            },
+            {
+                path: '/productDetails/:id',
+                element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
             }
         ]
     }

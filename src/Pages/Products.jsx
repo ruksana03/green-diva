@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import AddProduct from "./AddProduct";
 import ProductCard from "../Components/ProductsComponents/ProductCard";
 import { useState } from "react";
 // import Swal from "sweetalert2";
@@ -82,7 +81,7 @@ const Products = () => {
                     ></ProductCard>)
                 }
             </div>
-            <div className="my-28"><AddProduct></AddProduct></div>
+            
         </div>
     );
 };
