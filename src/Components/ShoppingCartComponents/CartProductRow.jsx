@@ -3,10 +3,11 @@ import { BsEye } from "react-icons/bs";
 import { MdOutlineDelete } from "react-icons/md";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 // const CartProductRow = (cartARowProduct,updatedProducts, setUpdatedProducts) => {
 const CartProductRow = ({ cartARowProduct,updatedCartProducts, setUpdatedCartProducts }) => {
-
+// console.log(cartARowProduct);
 
     const [quantity, setQuantity] = useState(1);
 
@@ -15,7 +16,7 @@ const CartProductRow = ({ cartARowProduct,updatedCartProducts, setUpdatedCartPro
     // if (!cartProduct.cartProduct) {
     //     return "No data added here";
     // }
-    const { _id, img, price } = cartARowProduct;
+    const { _id, userId, productId, productName, productImage, price} = cartARowProduct;
 
     // console.log(_id)
     // console.log(typeof(_id))
@@ -47,7 +48,7 @@ const CartProductRow = ({ cartARowProduct,updatedCartProducts, setUpdatedCartPro
             if (result.isConfirmed) {
           console.log(typeof(_id))
 
-                fetch(`http://localhost:5000/cartProducts/${_id}`, {
+                fetch(`http://localhost:5000/addToCart/${_id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -75,7 +76,8 @@ const CartProductRow = ({ cartARowProduct,updatedCartProducts, setUpdatedCartPro
             <td><button onClick={() => handleCurtDelete(_id)} className="bg-red-800 text-xl px-4 py-1 rounded-2xl text-white">
                 <MdOutlineDelete></MdOutlineDelete>
             </button></td>
-            <td><img className="w-20" src={img} alt="" /></td>
+            <td><img className="w-20" src={productImage} alt="" /></td>
+            <td><h1>{productName}</h1></td>
             <td><h1>{price}</h1></td>
             <td>
 
@@ -85,9 +87,9 @@ const CartProductRow = ({ cartARowProduct,updatedCartProducts, setUpdatedCartPro
 
             </td>
             <td>{total}</td>
-            <td><button className="bg-[#B0C591] text-xl px-4 py-1 rounded-2xl text-white">
+            <td><Link to={`/productDetails/${productId}`}><button className="bg-[#B0C591] text-xl px-4 py-1 rounded-2xl text-white">
                 <BsEye></BsEye>
-            </button></td>
+            </button></Link></td>
         </tr>
 
     );

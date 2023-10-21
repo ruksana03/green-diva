@@ -25,7 +25,7 @@ const BrandProductsCard = ({brandProduct}) => {
           
                
         <Link to={`/productDetails/${_id}`}><button className="bg-[#B0C591] text-xl px-4 py-1 rounded-2xl text-white">
-                        <BsCartPlus></BsCartPlus>
+                        <MdAdd></MdAdd>
                     </button></Link>
              
 

@@ -5,16 +5,24 @@ import KnowMore from "../Components/HomeComponents/KnowMore";
 import Testimonials from "../Components/HomeComponents/Testimonials";
 
 
+
 const Home = () => {
+
+
+ 
+
     return (
         <div>
-            <Banner></Banner>
-            <DivaProducts></DivaProducts>
-            <Brands></Brands>
-            <KnowMore></KnowMore>
-            <Testimonials></Testimonials>
-            Home
+
+
+            <Banner />
+            <Brands />
+            <DivaProducts />
+            <KnowMore />
+            <Testimonials />
         </div>
+
+
     );
 };
 

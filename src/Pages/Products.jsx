@@ -1,69 +1,30 @@
 import { useLoaderData } from "react-router-dom";
 import ProductCard from "../Components/ProductsComponents/ProductCard";
 import { useState } from "react";
-// import Swal from "sweetalert2";
-// import Swal from "sweetalert2";
-
 
 const Products = () => {
     const products = useLoaderData();
     // console.log(products);
 
     const [updatedProducts, setUpdatedProducts] = useState(products);
-    // const [cartProducts, setCartProducts] = useState({ });
-    // const [duplicateProductMassage, setDuplicateProductMassage] = useState(false)
-    // const [cartProductIds, setCartProductIds] = useState([]);
 
-    // console.log(cartProducts);
-
-    // const handleCartProduct = () =>{
-        
-    //     fetch("http://localhost:5000/products/addToCart", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(cartProducts ),
-    //     })
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             console.log(data);
-
-    //             if (data.insertedId) {
-    //                 Swal.fire({
-    //                     title: 'Success!',
-    //                     text: 'Product added successfully!',
-    //                     icon: 'success',
-    //                     confirmButtonText: 'Cool'
-    //                 })
-    //             }
-    //         });
-    // }
-
-    
-
-
-    // const handleDuplicateCartProduct = (productId) => {
-    //     for (const cartProduct of cartProducts) {
-    //         if (cartProduct._id === productId) {
-    //             setDuplicateProductMassage(true);
-    //             console.log(duplicateProductMassage);
-    //             Swal.fire({
-    //                 title: 'Added!',
-    //                 text: 'Your product has been added.',
-    //                 icon: 'success',
-    //             });
-    //             return;
-    //         }
-    //     }
-    //     setDuplicateProductMassage(false);
-    // // };
-
-    // console.log(duplicateProductMassage)
 
     return (
         <div>
-            <div className="my-28"> Products:{products.length}</div>
+            <div className="my-12 mx-auto text-center font-dancing text-xl">
+                <h1 className="text-center">Explore Our {products.length} Makeup Products</h1>
+                <h2 className="text-base"
+                    style={{
+                        background: '-webkit-linear-gradient(left, #537451, #74B47D, #A0D7AC)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        color: '#A0D7AC',
+                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'
+                    }}>
+                    Discover your Beauty with Green Diva
+                </h2>
+                <h1 className="text-sm"></h1>
+            </div>
             <div className="grid grid-cols-1 mx-4 md:grid-cols-2 gap-4 md:mx-12 lg:grid-cols-4 lg:mx-28">
                 {
                     updatedProducts.map(product => <ProductCard
@@ -71,17 +32,10 @@ const Products = () => {
                         product={product}
                         updatedProducts={updatedProducts}
                         setUpdatedProducts={setUpdatedProducts}
-                        // cartProducts={cartProducts}
-                        // setCartProducts={setCartProducts}
-                        // handleCartProduct={handleCartProduct}
-                        // handleDuplicateCartProduct={handleDuplicateCartProduct}
-                        // duplicateProductMassage={duplicateProductMassage}
-                      
-
                     ></ProductCard>)
                 }
             </div>
-            
+
         </div>
     );
 };
