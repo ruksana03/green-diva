@@ -5,21 +5,12 @@ import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-// const CartProductRow = (cartARowProduct,updatedProducts, setUpdatedProducts) => {
+
 const CartProductRow = ({ cartARowProduct,updatedCartProducts, setUpdatedCartProducts }) => {
-// console.log(cartARowProduct);
 
     const [quantity, setQuantity] = useState(1);
 
-    // console.log("new:", cartARowProduct);
-    // console.log("name", cartARowProduct.cartProduct.name);
-    // if (!cartProduct.cartProduct) {
-    //     return "No data added here";
-    // }
-    const { _id, userId, productId, productName, productImage, price} = cartARowProduct;
-
-    // console.log(_id)
-    // console.log(typeof(_id))
+    const { _id, productId, productName, productImage, price} = cartARowProduct;
 
 
     const addQuantity = () => {
@@ -81,9 +72,9 @@ const CartProductRow = ({ cartARowProduct,updatedCartProducts, setUpdatedCartPro
             <td><h1>{price}</h1></td>
             <td>
 
-                <button className="text-center p-2 border-2 text-2xl" onClick={removeQuantity}><IoIosRemove className=""></IoIosRemove></button>
-                <button className="text-xl text-center p-2 border-2">{quantity}</button>
-                <button className="text-center p-2 border-2 text-2xl" onClick={addQuantity}><IoIosAdd className=""></IoIosAdd></button>
+                <button className="text-center p-1  text-2xl" onClick={removeQuantity}><IoIosRemove className=""></IoIosRemove></button>
+                <button className="text-center text-xl">{quantity}</button>
+                <button className="text-center p-1 text-2xl" onClick={addQuantity}><IoIosAdd className=""></IoIosAdd></button>
 
             </td>
             <td>{total}</td>

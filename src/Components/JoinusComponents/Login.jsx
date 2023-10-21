@@ -43,30 +43,33 @@ const Login = () => {
     }
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+            <div className=" bg-[#FFF9F8] mx-28 my-16">
+
+                <div className="  flex flex-col justify-center items-center text-center">
+
+                    <div className="text-center font-dancing my-8">
+                        <h1 className="text-5xl ">Login now!</h1>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form onSubmit={handleSignIn} className="card-body">
-                            <div className="form-control">
+
+                    <div className=" w-1/2  shadow-2xl bg-[#FFF9F8] font-dancing text-lg p-8">
+                        <form onSubmit={handleSignIn}>
+                            <div className="">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text px-8">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                                <input type="email" name="email" placeholder="email" className="input input-bordered w-full" required />
                             </div>
-                            <div className="form-control">
+                            <div className="">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text px-8">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                <input type="password" name="password" placeholder="password" className="input input-bordered w-full" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                            <div className=" mt-6">
+                                <button  className=" text-lg text-white font-dancing w-full py-2" style={{ background: 'linear-gradient(to right, #537451, #A0D7AC)', textShadow: '2px 2px 4px rgba(0, 0, 0, 1)' }}>Login</button>
                             </div>
                             <label className="label">
                                 New here? <Link to="/register" className="label-text-alt link link-hover">Create an account</Link>

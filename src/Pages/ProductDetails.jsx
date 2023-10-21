@@ -16,42 +16,6 @@ const ProductDetails = () => {
     const { _id, img, name, price, brand, type, description } = aProductDetails
 
 
-    // const handleAddToCart = () => {
-
-    //     fetch("https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/addToCart", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             userId: user.uid,
-    //             productId: _id,
-    //             productName: name,
-    //             price: price,
-    //         }),
-    //     })
-    //         .then((response) => {
-    //             if (response.status === 200) {
-    //                 Swal.fire({
-    //                     title: 'Success!',
-    //                     text: 'Product updated successfully!',
-    //                     icon: 'success',
-    //                     confirmButtonText: 'Cool'
-    //                 })
-    //                 setAddedToCart(true);
-    //             }
-    //         })
-    //         .catch((error) => {
-    //             Swal.fire({
-    //                 title: 'Error!',
-    //                 text: 'Product updated successfully!',
-    //                 icon: 'error',
-    //                 confirmButtonText: 'ok'
-    //             })
-    //         });
-    // };
-
-
     const handleAddToCart = () => {
         // Fetch the user's cart data
         fetch("https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/addToCart", {

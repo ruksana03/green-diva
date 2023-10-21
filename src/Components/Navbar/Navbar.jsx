@@ -11,7 +11,7 @@ const Navbar = () => {
     console.log(user?.uid)
     console.log(user)
 
-    const [totalCartProduct, setTotalCartProduct] = useState([]);
+    const [totalCartProduct, setTotalCartProduct] = useState([]) ;
     const [userProducts, setUserProducts] = useState([]);
 
     // useEffect for get all cart collection data 
@@ -31,7 +31,7 @@ const Navbar = () => {
             }
         }
         handleTotalCartProduct();
-    }, [])
+    }, [totalCartProduct])
 
 
     // useEffect for filter specific user cart products

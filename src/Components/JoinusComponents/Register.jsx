@@ -95,52 +95,52 @@ const Register = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Sign Up now!</h1>
-
+            <div className=" bg-[#FFF9F8] mx-28 my-16">
+                <div className="  flex flex-col justify-center items-center text-center">
+                    <div className="text-center font-dancing my-8">
+                        <h1 className="text-5xl ">Sign Up now!</h1>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form onSubmit={handleRegister} className="card-body">
+
+                    <div className=" w-1/2  shadow-2xl bg-[#FFF9F8] font-dancing text-lg p-8">
+                        <form onSubmit={handleRegister}>
 
                             {/* input user name  */}
 
-                            <div className="form-control">
+                            <div className="">
                                 <label className="label">
                                     <span className="label-text">User Name</span>
                                 </label>
-                                <input type="text" name="name" placeholder="Your name" className="input input-bordered" required />
+                                <input type="text" name="name" placeholder="Your name" className="input input-bordered w-full" required />
                             </div>
 
                             {/* input user image  */}
 
-                            <div className="form-control">
+                            <div className="">
                                 <label className="label">
                                     <span className="label-text">Image</span>
                                 </label>
-                                <input type="text" name="img" placeholder="Your image" className="input input-bordered" required />
+                                <input type="text" name="img" placeholder="Your image" className="input input-bordered w-full" required />
                             </div>
 
                             {/* input user email  */}
 
-                            <div className="form-control">
+                            <div className="">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                                <input type="email" name="email" placeholder="email" className="input input-bordered w-full" required />
                             </div>
 
                             {/* input user password  */}
 
-                            <div className="form-control">
+                            <div className="">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                <input type="password" name="password" placeholder="password" className="input input-bordered w-full" required />
                             </div>
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary">Sign Up</button>
+                            <div className=" mt-6">
+                                <button className=" text-lg text-white font-dancing w-full py-2" style={{ background: 'linear-gradient(to right, #537451, #A0D7AC)', textShadow: '2px 2px 4px rgba(0, 0, 0, 1)' }}>Sign Up</button>
                             </div>
                             <label className="label">
                                 Have an account? <Link to="/login" className="label-text-alt link link-hover">Please Login</Link>

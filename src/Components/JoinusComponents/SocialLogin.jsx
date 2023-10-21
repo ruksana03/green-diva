@@ -24,12 +24,12 @@ const SocialLogin = () => {
                 })
                 .catch(error => {
                     console.error(error); 
-                    Swal.fire({
-                        title: 'Error!',
-                        text: 'Social login error!',
-                        icon: 'error',
-                        confirmButtonText: 'OK'
-                    });
+                    // Swal.fire({
+                    //     title: 'Error!',
+                    //     text: 'Social login error!',
+                    //     icon: 'error',
+                    //     confirmButtonText: 'OK'
+                    // });
                 });
         }
         
@@ -39,7 +39,7 @@ const SocialLogin = () => {
             <div className="">
                 <button
                     onClick={() => handleGoogleLogin(googleLogin)}
-                    className=" px-10 py-3 m-2 rounded-full font-bold bg-gradient-to-r from-[#FF5107] from-10% via-[#FF5107] via-30% to-[#FF9B23] to-90% w-full text-white">Google</button>
+                    className=" text-lg text-white font-dancing w-full py-2" style={{ background: 'linear-gradient(to right, #537451, #A0D7AC)', textShadow: '2px 2px 4px rgba(0, 0, 0, 1)' }}>Google</button>
             </div>
         </div>
     );

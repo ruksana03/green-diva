@@ -6,24 +6,16 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const ShoppingCart = () => {
     const { user } = useContext(AuthContext);
-    // console.log(user)
-
     const cartProducts = useLoaderData();
-    // console.log(cartProducts)
-
     const [updatedCartProducts, setUpdatedCartProducts] = useState(cartProducts);
-
-  
-
-     const userCart = updatedCartProducts.filter((userCartProduct) => user.uid == userCartProduct.userId)
-    console.log(userCart) 
-
-    // console.log(updatedProducts)
+    const userCart = updatedCartProducts.filter((userCartProduct) => user.uid == userCartProduct.userId)
 
     return (
         <div className="my-28">
-            Shopping cart: {cartProducts.length}
-            User Name : {user.displayName}
+            <div className="font-dancing text-2xl text-center my-4">
+                {user.displayName} Your Cart Have {userCart.length} Products
+            </div>
+
             <div className="overflow-x-auto mx-24">
                 <table className="table">
 
@@ -49,29 +41,14 @@ const ShoppingCart = () => {
                             userCart.map(cartARowProduct => (<CartProductRow key={cartARowProduct._id}
                                 cartARowProduct={cartARowProduct}
                                 updatedCartProducts={updatedCartProducts}
-                                setUpdatedCartProducts= {setUpdatedCartProducts}
+                                setUpdatedCartProducts={setUpdatedCartProducts}
                             ></CartProductRow>
                             ))
                         }
-
-
                     </tbody>
-
-                    {/* foot */}
-
-                    <tfoot>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th> Total</th>
-                            <th>Total quantity</th>
-                            <th>Total price</th>
-                        </tr>
-                    </tfoot>
 
                 </table>
             </div>
-
         </div >
 
 
