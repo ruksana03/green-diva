@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 
 
 const Brands = () => {
@@ -20,7 +20,7 @@ const Brands = () => {
     useEffect(() => {
         async function handleBrands() {
             try {
-                const response = await fetch('https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/brands')
+                const response = await fetch('https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/brands')
                 if (response.ok) {
                     const data = await response.json();
                     setBrands(data);
@@ -63,7 +63,7 @@ const Brands = () => {
                             clickable: true,
                         }}
                         navigation={true}
-                        modules={[Autoplay, Pagination, Navigation]}
+                        modules={[Autoplay, Navigation]}
                         className="mySwiper"
                         slidesPerView={BrandsSlidesPerView}
                     >

@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 import { MdAdd } from "react-icons/md";
+import DarkModeToggle from "../DarkModeToggle";
 
 const Navbar = () => {
 
@@ -17,7 +18,7 @@ const Navbar = () => {
     useEffect(() => {
         async function handleTotalCartProduct() {
             try {
-                const response = await fetch('https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/addToCart')
+                const response = await fetch('https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/addToCart')
                 if (response.ok) {
                     const data = await response.json();
                     setTotalCartProduct(data);
@@ -189,6 +190,8 @@ const Navbar = () => {
                             </div>
                         </div> : <Link to='/products'><button className="ml-4 btn text-base text-white" style={{ background: 'linear-gradient(to right, #537451, #A0D7AC)', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}><MdAdd className="text-2xl"></MdAdd></button></Link>
                     }
+
+                    <DarkModeToggle></DarkModeToggle>
 
 
                     {/* nav Profile handling  */}

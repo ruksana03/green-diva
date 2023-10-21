@@ -9,13 +9,13 @@ const BrandDetails = () => {
     const [allProducts, setAllProducts] = useState([])
 
     const brands = useLoaderData();
-    const { _id, brandName, logo } = brands;
+    const { brandName, logo } = brands;
     // console.log(_id, brandName, logo)
 
     useEffect(() => {
         async function handleAllProducts() {
             try {
-                const res = await fetch("https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/products")
+                const res = await fetch("https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/products")
                 if (res.ok) {
                     const allData = await res.json();
                     setAllProducts(allData);
@@ -42,9 +42,9 @@ const BrandDetails = () => {
             <BrandDetailsBanner></BrandDetailsBanner>
 
             <div className="text-center font-dancing text-3xl my-10 items-center" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
-                <img className="mx-auto w-20 h-14" src={logo} alt="" />
+                <img className="mx-auto w-20 h-14 border-2 border-[#8B9D7F] rounded-lg" src={logo} alt="" />
                 <p>Explore the beauty with <span className="text-4xl font-bold">{brandName}</span></p>
-                <h1 className="my-8">There are <span className="text-4xl font-bold"> "{filteredProducts.length}" </span> Products available</h1>
+                <h1 className="my-8">There are <span className="text-4xl font-bold"> {filteredProducts.length} </span> Products available</h1>
             </div>
 
             <div>

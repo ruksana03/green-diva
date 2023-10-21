@@ -9,7 +9,7 @@ const Banner = () => {
             <div className="hero-overlay bg-white bg-opacity-10"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
-                    <h1 className="items-center text-6xl text-[#184d24] font-dancing font-light"
+                    <h1 className="items-center text-6xl text-black font-dancing font-light"
                         style={{
                             textShadow: '6px 6px 6px rgba(0, 0, 0, 4)' 
                         }}
