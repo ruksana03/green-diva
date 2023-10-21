@@ -15,3 +15,6 @@ Currently, two official plugins are available:
 - Users can view the contents of their cart, displaying all the products they've added. They can see product details, quantities, prices, and a subtotal for each item
 - Users have the ability to update their cart. They can change quantities, remove items, or clear the entire cart if desired. 
 -  The website ensures the security of user data, especially during the checkout process.
+
+**Client-side live link**
+- 
