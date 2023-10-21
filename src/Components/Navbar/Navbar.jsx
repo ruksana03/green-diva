@@ -17,7 +17,7 @@ const Navbar = () => {
     useEffect(() => {
         async function handleTotalCartProduct() {
             try {
-                const response = await fetch('http://localhost:5000/addToCart')
+                const response = await fetch('https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/addToCart')
                 if (response.ok) {
                     const data = await response.json();
                     setTotalCartProduct(data);

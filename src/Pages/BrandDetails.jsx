@@ -15,7 +15,7 @@ const BrandDetails = () => {
     useEffect(() => {
         async function handleAllProducts() {
             try {
-                const res = await fetch("http://localhost:5000/products")
+                const res = await fetch("https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/products")
                 if (res.ok) {
                     const allData = await res.json();
                     setAllProducts(allData);

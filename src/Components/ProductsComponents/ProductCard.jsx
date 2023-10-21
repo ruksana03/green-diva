@@ -32,7 +32,7 @@ const ProductCard = ({ product, updatedProducts, setUpdatedProducts }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/products/${_id}`, {
+                fetch(`https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/products/${_id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -58,7 +58,7 @@ const ProductCard = ({ product, updatedProducts, setUpdatedProducts }) => {
     // useEffect(() => {
     //     async function handleAllUsers() {
     //         try {
-    //             const res = await fetch("http://localhost:5000/users")
+    //             const res = await fetch("https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/users")
     //             if (res.ok) {
     //                 const allUser = await res.json();
     //                 setAllUsers(allUser);
@@ -83,7 +83,7 @@ const ProductCard = ({ product, updatedProducts, setUpdatedProducts }) => {
 
     // const addCartProduct = (_id,userEmail) => {
     //     console.log(_id)
-    //     fetch("http://localhost:5000/addToCart", {
+    //     fetch("https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/addToCart", {
     //         method: "POST",
     //         headers: {
     //             "Content-Type": "application/json",

@@ -43,7 +43,7 @@ const Register = () => {
                         const user = { name, email, img, password, createdTime };
     
                         // Add user data to your server
-                        fetch("http://localhost:5000/users", {
+                        fetch("https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/users", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",

@@ -22,7 +22,7 @@ const AddProduct = () => {
         // send data to server 
 
 
-        fetch("http://localhost:5000/products", {
+        fetch("https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/products", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const AddProduct = () => {
         console.log(newBrand)
 
         // send to server 
-        fetch('http://localhost:5000/brands',{
+        fetch('https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/brands',{
             method:"POST",
             headers:{
                 "Content-Type" : "application/json",

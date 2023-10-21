@@ -20,7 +20,7 @@ const Brands = () => {
     useEffect(() => {
         async function handleBrands() {
             try {
-                const response = await fetch('http://localhost:5000/brands')
+                const response = await fetch('https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/brands')
                 if (response.ok) {
                     const data = await response.json();
                     setBrands(data);

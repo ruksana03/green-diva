@@ -16,7 +16,7 @@ const DivaProducts = () => {
   const [slidesPerView, setSlidesPerView] = useState(4);
 
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/products')
       .then((res) => res.json())
       .then((data) => setDivaProducts(data));
   }, []);

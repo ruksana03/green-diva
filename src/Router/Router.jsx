@@ -31,7 +31,7 @@ const Router = createBrowserRouter([
             {
                 path: '/products',
                 element: <Products></Products>,
-                loader: () => fetch('http://localhost:5000/products')
+                loader: () => fetch('https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/products')
             },
             {
                 path: '/addProduct',
@@ -40,12 +40,12 @@ const Router = createBrowserRouter([
             {
                 path: '/updateProduct/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/products/${params.id}`)
             },
             {
                 path: '/brandDetails/:id',
                 element: <PrivateRoute><BrandDetails></BrandDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.id}`)
+                loader: ({ params }) => fetch(`https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/brands/${params.id}`)
             },
             {
                 path:'/joinUs',
@@ -63,7 +63,7 @@ const Router = createBrowserRouter([
             {
                 path: '/shoppingCart',
                 element: <PrivateRoute><ShoppingCart></ShoppingCart></PrivateRoute>,
-                loader:() => fetch('http://localhost:5000/addToCart')
+                loader:() => fetch('https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/addToCart')
             },
             {
                 path: '/pricingPlans',
@@ -80,7 +80,7 @@ const Router = createBrowserRouter([
             {
                 path: '/productDetails/:id',
                 element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://green-diva-server-b5eulip49-ruksanas-projects.vercel.app/products/${params.id}`)
             },
             {
                 path:'/userProfile',
