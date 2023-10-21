@@ -1,20 +1,13 @@
 
-import { useEffect, useState } from "react";
-import { BsEye, BsCartPlus } from "react-icons/bs";
+
+import { BsEye} from "react-icons/bs";
 import { MdOutlineDelete, MdModeEdit, MdAdd } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-// const ProductCard = ({ product, updatedProducts, setUpdatedProducts, cartProducts, setCartProducts,handleCartProduct }) => {
+
 const ProductCard = ({ product, updatedProducts, setUpdatedProducts }) => {
     // console.log(product);
-
-
-    // const [cartSuccessMassage, setCartSuccessMassage] = useState(false)
-    // const [allUsers, setAllUsers] = useState([])
-
-
-
 
     const { _id, img, name, brand, price, rating } = product;
 
@@ -53,59 +46,6 @@ const ProductCard = ({ product, updatedProducts, setUpdatedProducts }) => {
         })
 
     };
-
-
-    // useEffect(() => {
-    //     async function handleAllUsers() {
-    //         try {
-    //             const res = await fetch("https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/users")
-    //             if (res.ok) {
-    //                 const allUser = await res.json();
-    //                 setAllUsers(allUser);
-    //             } else {
-    //                 console.error("failed to fetch All data")
-    //             }
-    //         } catch (error) {
-    //             console.error('Error!!!!')
-    //         }
-    //     }
-    //     handleAllUsers();
-    // }, []);
-
-    // console.log(allUsers)
-
-    // // Extract email addresses
-    // const emails = allUsers.map((user) => user.email);
-
-    // // Log the email addresses
-    // console.log(emails);
-
-
-    // const addCartProduct = (_id,userEmail) => {
-    //     console.log(_id)
-    //     fetch("https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/addToCart", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(product),
-    //     })
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             console.log(data);
-    //             if (data.insertedId) {
-    //                 setCartSuccessMassage(true)
-    //                 Swal.fire({
-    //                     title: "Added!",
-    //                     text: "Your product has been added.",
-    //                     icon: "success",
-    //                 });
-    //             }
-    //         });
-    // };
-
-
-
 
 
     return (

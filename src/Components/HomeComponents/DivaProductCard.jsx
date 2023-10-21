@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const DivaProductCard = ({divaProduct}) => {
     console.log(divaProduct)
-    const {_id,img, name, brand, type, price,rating} = divaProduct
+    const {_id,img, name, brand, type, price,rating} = divaProduct || {}
     return (
        <Link to={`productDetails/${_id}`}>
         <div className="border-2 rounded-lg">

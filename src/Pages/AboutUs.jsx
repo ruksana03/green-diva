@@ -1,9 +1,12 @@
+import AboutUsBanner from "../Components/AboutUsComponents/AboutUsBanner";
+import Team from "../Components/AboutUsComponents/Team";
 
 
 const AboutUs = () => {
     return (
         <div>
-            AboutUs
+            <AboutUsBanner></AboutUsBanner>
+            <Team></Team>
         </div>
     );
 };

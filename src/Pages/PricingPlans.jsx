@@ -1,9 +1,12 @@
+import PricingPlanBanner from "../Components/PricingPlanComponents/PricingPlanBanner";
+import PricingPlansCard from "../Components/PricingPlanComponents/PricingPlansCard";
 
 
 const PricingPlans = () => {
     return (
         <div>
-            PricingPlans
+            <PricingPlanBanner></PricingPlanBanner>
+            <PricingPlansCard></PricingPlansCard>
         </div>
     );
 };

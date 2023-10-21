@@ -61,9 +61,9 @@ const Testimonials = () => {
                 >
                     {testimonials.map((testimonial) => (
                         <SwiperSlide key={testimonials.id}>
-                            <h1 className='text-2xl font-medium'>TESTIMONIAL</h1>
-                            <p className='font-dancing text-xl'>{testimonial.details}</p>
-                            <h1 className='font-dancing'>~{testimonial.Name}~</h1>
+                            <h1 className='text-2xl font-medium font-dancing text-white' style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>TESTIMONIAL</h1>
+                            <p className='font-dancing text-xl text-white' style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>{testimonial.details}</p>
+                            <h1 className='font-dancing text-white' style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>~{testimonial.Name}~</h1>
                         </SwiperSlide>
                     ))}
                 </Swiper>

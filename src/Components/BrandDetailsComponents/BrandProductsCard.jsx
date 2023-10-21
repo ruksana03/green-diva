@@ -8,7 +8,7 @@ const BrandProductsCard = ({ brandProduct }) => {
 
     // console.log(brandProduct);
 
-    const { _id, brand, price, img, name, rating } = brandProduct;
+    const { _id, brand, price, img, name, rating } = brandProduct || {};
 
     return (
         <div>
@@ -36,7 +36,7 @@ const BrandProductsCard = ({ brandProduct }) => {
                     </button>
                 </Link>
 
-                
+
                 <Link to={`/updateProduct/${_id}`}>
                     <button className="bg-black text-xl px-4 py-1 rounded-2xl text-white">
                         <MdModeEdit></MdModeEdit>
