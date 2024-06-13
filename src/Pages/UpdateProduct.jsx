@@ -26,7 +26,7 @@ const UpdateProduct = () => {
         // send data to server 
 
 
-        fetch(`https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/products/${_id}`, {
+        fetch(`https://green-diva-server.vercel.app/products/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

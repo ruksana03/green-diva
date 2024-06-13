@@ -13,10 +13,10 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const DivaProducts = () => {
   const [divaProducts, setDivaProducts] = useState([]);
-  const [slidesPerView, setSlidesPerView] = useState(4);
+  const [slidesPerView, setSlidesPerView] = useState(6);
 
   useEffect(() => {
-    fetch('https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/products')
+    fetch('https://green-diva-server.vercel.app/products')
       .then((res) => res.json())
       .then((data) => setDivaProducts(data));
   }, []);
@@ -31,7 +31,7 @@ const DivaProducts = () => {
   }, []);
 
   return (
-    <div>
+    <div className="w-10/12 mx-auto">
       <div className="text-center mt-12">
         <p className="font-dancing items-center text-4xl font-extrabold hover:from-[#537451]  hover:to-[#A0D7AC]" style={{
                         background: '-webkit-linear-gradient(left, #537451, #74B47D, #A0D7AC)',

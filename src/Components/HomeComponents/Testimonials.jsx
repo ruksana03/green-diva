@@ -1,49 +1,40 @@
-// import { useEffect, useState } from "react";
+/* eslint-disable react/no-unescaped-entities */
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-// import DivaProductCard from "./DivaProductCard";
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
-
-const testimonials = [{
-    id: 1,
-    Name: "Jane Doe",
-    details: "I'm in love with Green Diva's makeup products! They feel so natural on my skin, and the results are stunning. Their commitment to using natural ingredients sets them apart. I've found my beauty match with Green Diva!"
-},
-{
-    id: 2,
-    Name: "John Smith",
-    details: "As a professional makeup artist, I trust Green Diva's products for their quality and versatility. The eyeshadow palettes and setting powders are my go-to choices. My clients always leave feeling confident and beautiful."
-},
-{
-    id: 3,
-    Name: "Emily Turner",
-    details: "Green Diva's makeup not only enhances my beauty but also respects the environment. Their eco-friendly packaging and cruelty-free practices make me feel good about my choices. Find your beauty match with Green Diva, just like I did!"
-}
-
+const testimonials = [
+    {
+        id: 1,
+        Name: "Jane Doe",
+        image: "https://i.ibb.co/F0sgh7C/user1.png",
+        details: "I'm in love with Green Diva's makeup products! They feel so natural on my skin, and the results are stunning. Their commitment to using natural ingredients sets them apart. I've found my beauty match with Green Diva!"
+    },
+    {
+        id: 2,
+        Name: "John Smith",
+        image: "https://i.ibb.co/j3C8L8B/user2.png",
+        details: "As a professional makeup artist, I trust Green Diva's products for their quality and versatility. The eyeshadow palettes and setting powders are my go-to choices. My clients always leave feeling confident and beautiful."
+    },
+    {
+        id: 3,
+        Name: "Emily Turner",
+        image: "https://i.ibb.co/gVMYdD0/user3.png",
+        details: "Green Diva's makeup not only enhances my beauty but also respects the environment. Their eco-friendly packaging and cruelty-free practices make me feel good about my choices. Find your beauty match with Green Diva, just like I did!"
+    }
 ];
-
-
 
 const Testimonials = () => {
     return (
-        <div>
-            <div className="text-center mt-12">
-                <p className="font-dancing items-center text-4xl font-extrabold hover:from-[#537451]  hover:to-[#A0D7AC]" style={{
-                    background: '-webkit-linear-gradient(left, #537451, #74B47D, #A0D7AC)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    color: '#A0D7AC',
-                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'
-                }}>Green diva</p>
-                <h2 className="mb-5 text-xl font-medium text-black" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>Testimonials</h2>
-
+        <div className='w-10/12 mx-auto mt-12 mb-24'>
+            <hr className="w-1/3 line" />
+            <div className="mt-6 mb-12">
+                <h1 className="styleHead">Testimonial</h1>
+                <p className="SubHead">Find your skin type</p>
             </div>
-            <div className='bg-[#CCA78D] px-32 py-28 text-center'>
+            <div className=''>
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}
@@ -54,16 +45,21 @@ const Testimonials = () => {
                     pagination={{
                         clickable: true,
                     }}
-                    navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
+                    modules={[Autoplay, Pagination]}
                     className="mySwiper"
-                    slidesPerView={1}
+                    slidesPerView={2} // Show 2 testimonials at a time
                 >
                     {testimonials.map((testimonial) => (
-                        <SwiperSlide key={testimonials.id}>
-                            <h1 className='text-2xl font-medium font-dancing text-white' style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>TESTIMONIAL</h1>
-                            <p className='font-dancing text-xl text-white' style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>{testimonial.details}</p>
-                            <h1 className='font-dancing text-white' style={{textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>~{testimonial.Name}~</h1>
+                        <SwiperSlide key={testimonial.id}>
+                            <div className='text-center'>
+
+                                <p className='baseText border p-2' style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>""{testimonial.details}""</p>
+
+                                <div className='flex mt-6'>
+                                    <img src={testimonial.image} className='rounded-full w-24 h-24 border p-1' alt={testimonial.Name} />
+                                    <h1 className='my-auto ml-2' style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>~{testimonial.Name}~</h1>
+                                </div>
+                            </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>

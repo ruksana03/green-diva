@@ -2,7 +2,7 @@
 
 const PricingPlanBanner = () => {
     return (
-        <div className="w-full h-80" style={{
+        <div className="w-full h-80 pt-12" style={{
             backgroundImage: 'url(https://i.ibb.co/Qc7GS8v/Pricing-Page-Banner.jpg)',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',

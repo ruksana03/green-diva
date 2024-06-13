@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AboutUsBanner = () => {
     return (
-        <div className="w-full h-80" style={{
+        <div className="w-full h-96 pt-24" style={{
             backgroundImage: 'url(https://i.ibb.co/Y8yHTnQ/pexels-karolina-grabowska-4938507.jpg)',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',

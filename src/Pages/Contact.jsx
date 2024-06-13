@@ -6,9 +6,9 @@ import UserQna from "../Components/Contact/UserQna";
 const Contact = () => {
     return (
         <div>
-            <ContactBanner></ContactBanner>
-            <OurPleace></OurPleace>
+            <ContactBanner/>
             <UserQna></UserQna>
+            <OurPleace></OurPleace>
         </div>
     );
 };

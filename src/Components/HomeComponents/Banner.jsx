@@ -1,35 +1,89 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination } from 'swiper/modules';
+
+import face1 from '../../assets/face/face1.png';
+import face2 from '../../assets/face/face2.png';
+import face3 from '../../assets/face/face3.png';
+import face4 from '../../assets/face/face4.png';
 
 const Banner = () => {
-    const {user} = useContext(AuthContext)
-    return (
-        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/VgMtnt7/7957540b-7f8c-4085-b67d-add5c0729952.jpg)' }}>
-            <div className="hero-overlay bg-white bg-opacity-10"></div>
-            <div className="hero-content text-center text-neutral-content">
-                <div className="max-w-md">
-                    <h1 className="items-center text-6xl text-black font-dancing font-light"
-                        style={{
-                            textShadow: '6px 6px 6px rgba(0, 0, 0, 4)' 
-                        }}
-                    >
-                        HELLO DIVA’S
-                    </h1>
-                   
-                    <p className="mb-5 text-xl font-medium text-black font-dancing" style={{ textShadow: '4px 4px 4px rgba(0, 0, 0, 1)' }}>
-                        Elevate Your Beauty, Naturally with Green Diva
-                    </p>{
-                        user?.email? <Link to='/aboutUs'><button className="btn text-lg text-white font-dancing" style={{ background: 'linear-gradient(to right, #537451, #A0D7AC)', textShadow: '2px 2px 4px rgba(0, 0, 0, 1)' }}>
-                        Get Started
-                    </button></Link>  :<Link to='/joinUs'><button className="btn text-lg text-white font-dancing" style={{ background: 'linear-gradient(to right, #537451, #A0D7AC)', textShadow: '2px 2px 4px rgba(0, 0, 0, 1)' }}>
-                        Get Started
-                    </button></Link>
-                    }
-                    
+    const { user } = useContext(AuthContext);
 
-                </div>
-            </div>
+    // Array of face images
+    const faceImages = [face1, face2, face3, face4];
+
+    // Array of corresponding texts
+    const textArray = [
+        {
+            title: "Hello Diva’S",
+            description: "Elevate Your Beauty, Naturally with Green Diva"
+        },
+        {
+            title: "Skin Types",
+            description: "Discover your skin type and products with Green Diva."
+        },
+        {
+            title: "Summer Beauty",
+            description: "Enhance your glow this summer with Green Diva."
+        },
+        {
+            title: "Winter Sale",
+            description: "Unlock your radiance with Green Diva."
+        }
+    ];
+
+    return (
+        <div className="h-auto w-10/12 mx-auto">
+            <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Autoplay, Pagination]}
+                className="mySwiper hidden md:block"
+            >
+                {faceImages.map((image, index) => (
+                    <SwiperSlide key={index}>
+                        <div className="flex justify-between items-center h-full">
+                            <div className="w-1/2 px-6 pl-10 pr-8 md:pl-12 lg:pl-32 lg:pr-8">
+                                <h1 className="styleHead">
+                                    {textArray[index].title}
+                                </h1>
+                                <p className="SubHead break-word my-6">
+                                    {textArray[index].description}
+                                </p>
+                                {user?.email ? (
+                                    <Link to='/products'>
+                                        <button className="btn-style">
+                                            Shop Now
+                                        </button>
+                                    </Link>
+                                ) : (
+                                    <Link to='/joinUs'>
+                                        <button className="btn-style">
+                                            Shop Now
+                                        </button>
+                                    </Link>
+                                )}
+                            </div>
+                            <div className="md:w-1/2">
+                                <img src={image} alt="" className="h-full w-full object-cover" />
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper> 
         </div>
     );
 };

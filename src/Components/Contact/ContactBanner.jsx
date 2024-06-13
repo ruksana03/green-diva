@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ContactBanner = () => {
     return (
-        <div className="w-full h-80" style={{
+        <div className="w-full h-96 pt-24" style={{
             backgroundImage: 'url(https://i.ibb.co/8s6X6LX/contact-Banner.jpg)',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',

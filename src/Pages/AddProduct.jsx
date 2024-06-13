@@ -22,7 +22,7 @@ const AddProduct = () => {
         // send data to server 
 
 
-        fetch("https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/products", {
+        fetch("https://green-diva-server.vercel.app/products", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -44,24 +44,24 @@ const AddProduct = () => {
             });
     }
 
-    const handleAddBrand = e =>{
+    const handleAddBrand = e => {
         e.preventDefault();
         const brandForm = e.target;
         const logo = brandForm.logo.value;
         const brandName = brandForm.brandName.value;
         console.log(logo, brandName)
-        const newBrand = {logo,brandName}
+        const newBrand = { logo, brandName }
         console.log(newBrand)
 
         // send to server 
-        fetch('https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/brands',{
-            method:"POST",
-            headers:{
-                "Content-Type" : "application/json",
+        fetch('https://green-diva-server.vercel.app/brands', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
             },
-            body:JSON.stringify(newBrand),
+            body: JSON.stringify(newBrand),
         })
-        .then((res) => res.json())
+            .then((res) => res.json())
             .then((data) => {
                 console.log(data);
 

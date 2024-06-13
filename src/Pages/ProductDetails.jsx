@@ -18,7 +18,7 @@ const ProductDetails = () => {
 
     const handleAddToCart = () => {
         // Fetch the user's cart data
-        fetch("https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/addToCart", {
+        fetch("https://green-diva-server.vercel.app/addToCart", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const ProductDetails = () => {
                 } else {
                     setAddedToCart(false)
                     // If the product is not in any user's cart, add it
-                    fetch("https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/addToCart", {
+                    fetch("https://green-diva-server.vercel.app/addToCart", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",

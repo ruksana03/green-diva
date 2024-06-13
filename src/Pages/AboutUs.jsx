@@ -5,8 +5,8 @@ import Team from "../Components/AboutUsComponents/Team";
 const AboutUs = () => {
     return (
         <div>
-            <AboutUsBanner></AboutUsBanner>
-            <Team></Team>
+            <AboutUsBanner/>
+            <Team/>
         </div>
     );
 };

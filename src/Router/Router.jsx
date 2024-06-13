@@ -16,6 +16,11 @@ import BrandDetails from "../Pages/BrandDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ProductDetails from "../Pages/ProductDetails";
 import UserProfile from "../Pages/UserProfile";
+import DashboardLayout from "../Layout/DashboardLayout";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import AddNewProduct from "../Pages/Dashboard/AddProduct/AddNewProduct";
+import AddFaceTypes from "../Pages/Dashboard/Facetypes/AddFaceTypes";
+import AddCategory from "../Pages/Dashboard/AddCategory/AddCategory";
 
 
 const Router = createBrowserRouter([
@@ -31,7 +36,7 @@ const Router = createBrowserRouter([
             {
                 path: '/products',
                 element: <Products></Products>,
-                loader: () => fetch('https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/products')
+                loader: () => fetch('https://green-diva-server.vercel.app/products')
             },
             {
                 path: '/addProduct',
@@ -40,12 +45,12 @@ const Router = createBrowserRouter([
             {
                 path: '/updateProduct/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://green-diva-server.vercel.app/products/${params.id}`)
             },
             {
                 path: '/brandDetails/:id',
                 element: <PrivateRoute><BrandDetails></BrandDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/brands/${params.id}`)
+                loader: ({ params }) => fetch(`https://green-diva-server.vercel.app/brands/${params.id}`)
             },
             {
                 path:'/joinUs',
@@ -63,7 +68,7 @@ const Router = createBrowserRouter([
             {
                 path: '/shoppingCart',
                 element: <PrivateRoute><ShoppingCart></ShoppingCart></PrivateRoute>,
-                loader:() => fetch('https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/addToCart')
+                loader:() => fetch('https://green-diva-server.vercel.app/addToCart')
             },
             {
                 path: '/pricingPlans',
@@ -80,12 +85,39 @@ const Router = createBrowserRouter([
             {
                 path: '/productDetails/:id',
                 element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://green-diva-server.vercel.app/products/${params.id}`)
             },
             {
                 path:'/userProfile',
                 element:<UserProfile></UserProfile>
             }
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <DashboardLayout/>,
+        children:[
+            {
+                path: 'dashboard',
+                element: <Dashboard/>
+            },
+            {
+                path: 'addNewProduct',
+                element: <AddNewProduct/>
+            },
+            {
+                path: 'addFaceTypes',
+                element: <AddFaceTypes/>
+            },
+            {
+                path: 'addCategory',
+                element: <AddCategory/>
+            },
+            // {
+            //     path: '/updateProduct/:id',
+            //     element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
+            //     loader: ({ params }) => fetch(`https://green-diva-server.vercel.app/products/${params.id}`)
+            // },
         ]
     }
 ])

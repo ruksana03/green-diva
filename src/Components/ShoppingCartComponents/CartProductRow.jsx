@@ -39,7 +39,7 @@ const CartProductRow = ({ cartARowProduct,updatedCartProducts, setUpdatedCartPro
             if (result.isConfirmed) {
           console.log(typeof(_id))
 
-                fetch(`https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/addToCart/${_id}`, {
+                fetch(`https://green-diva-server.vercel.app/addToCart/${_id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())

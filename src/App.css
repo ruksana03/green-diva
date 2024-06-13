@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300&display=swap');
+
+/* Define variables */
+:root {
+  --bg-light: linear-gradient(#ffffff, #e9fbf2, #ecfdfa, #ffffff);
+  --bg-dark: linear-gradient(#0a0a0a, #0c0c17, #000000);
+  --text-light: black;
+  --text-dark: white;
+}
+
+/* Define body styles for light and dark themes */
+body.light {
+  background: var(--bg-light);
+  color: var(--text-light);
+  font-family: 'Dancing Script', cursive; /* Update body font */
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  font-family: 'Dancing Script', cursive; /* Update body font */
+}
+
+body.light .navbar {
+  background: #D8EFD3;
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Dancing Script', cursive; /* Update body font */
+}
+
+body.dark .navbar{
+  background: #1e2d2a;
+  color: var(--text-dark);
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Dancing Script', cursive; /* Update body font */
+}
+
+
+body.light .active {
+  font-weight: bold;
+  color: #074173; 
+  text-decoration: underline;
+}
+
+body.dark .active {
+  font-weight: bold;
+  color: #436850; 
+  text-decoration: underline;
+}
+
+/* Ensure body font is set correctly initially */
+body {
+  font-family: 'Dancing Script', cursive; 
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body.light .baseText{
+  font-size: 16px;
+  line-height: 1.5;
+}
+body.dark .baseText {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* head Text */
+body.light .styleHead {
+  font-family: var(--font-base);
+  color: black;
+  font-size: 64px;
+  line-height: 83.2px;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  background: -webkit-linear-gradient(left, #537451, #74B47D, #A0D7AC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #A0D7AC;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+body.light .normalHead {
+  font-family: var(--font-base);
+  color: black;
+  font-size: 64px;
+  line-height: 83.2px;
+  letter-spacing: 0.04em;
+  color: #A0D7AC;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+body.dark .styleHead {
+  font-family: var(--font-base);
+  color: black;
+  font-size: 64px;
+  line-height: 83.2px;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  background: -webkit-linear-gradient(left, #537451, #74B47D, #A0D7AC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #A0D7AC;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+
+/* head Text */
+body.light .styleSubHead {
+  font-family: var(--font-base);
+  color: black;
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  background: -webkit-linear-gradient(left, #537451, #74B47D, #A0D7AC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+body.light .SubHead {
+  font-family: var(--font-base);
+  color: black;
+  font-size: 22px;
+  line-height: 42px;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+body.dark .styleSubHead {
+  font-family: var(--font-base);
+  color: black;
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  background: -webkit-linear-gradient(left, #537451, #74B47D, #A0D7AC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+body.dark .SubHead {
+  font-family: var(--font-base);
+  color: black;
+  font-size: 22px;
+  line-height: 42px;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+body.light .btn-style{
+  background-color: #537451;
+  color:white;
+  font-family: var(--font-base);
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  font-size: 14px;
+  padding: 0.5rem 2rem;
+  outline: none;
+}
+body.dark .btn-style{
+  background-color: #55AD9B;
+  color:white;
+  font-family: var(--font-base);
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  font-size: 14px;
+  padding: 0.5rem 2rem;
+  outline: none;
+}
+
+
+/* Hello Divas styles */
+.hello-divas {
+  display: flex;
+  justify-content: center;
+  font-size: 4rem; /* This represents text-6xl */
+  color: black; /* This represents text-black */
+  font-family: 'Dancing Script', cursive; /* This represents font-dancing */
+  font-weight: 300; /* This represents font-light */
+  text-shadow: 6px 6px 6px rgba(0, 0, 0, 4);
+}
+
+body.dark .line{
+  border: 2px solid #55AD9B ;
+}
+body.light .line{
+  border: 2px solid #5F7464 ;
+}
+
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  body.dark .styleHead, body.light .styleHead {
+    font-size: 52px;
+    line-height: 628px;
+  }
+}
+
+@media (max-width: 992px) {
+  body.dark .styleHead, body.light .styleHead {
+    font-size: 42px;
+    line-height: 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  body.dark .styleHead, body.light .styleHead {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+@media (max-width: 576px) {
+  body.dark .styleHead, body.light .styleHead{
+    font-size: 22px;
+    line-height: 32px;
+  }
+}

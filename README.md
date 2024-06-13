@@ -17,4 +17,4 @@ Currently, two official plugins are available:
 -  The website ensures the security of user data, especially during the checkout process.
 
 **Client-side live link**
-- 
+- https://green-diva.web.app/

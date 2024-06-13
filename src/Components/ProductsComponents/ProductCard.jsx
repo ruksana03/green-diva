@@ -25,7 +25,7 @@ const ProductCard = ({ product, updatedProducts, setUpdatedProducts }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://green-diva-server-byb33mxas-ruksanas-projects.vercel.app/products/${_id}`, {
+                fetch(`https://green-diva-server.vercel.app/products/${_id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
